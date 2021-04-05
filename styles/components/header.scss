@@ -1,5 +1,5 @@
 #header {
-    background-color: #2ecc71;
+    background-color: #5e270a;
     height: 50px;
     display: flex;
     justify-content: space-around;
@@ -8,20 +8,25 @@
         text-decoration: none;
         font-size: 20px;
         font-weight: bold;
-        padding: 10px;
-        border-radius: 10px;
+        padding: 10px 40px;
+        border-radius: 5px;
+        color: #b89b8c;
         &:hover {
-            background-color: #48a548;
+            background-color: #41291f;
         }
     }
     input {
+        background-color: #faebd7;
         height: 30px;
         width: 700px;
         outline: none;
         border-radius: 5px;
         border: none;
+        color: #3f1905;
+        font-size: 14px;
         &::placeholder {
             text-align: center;
+            font-size: 16px;
         }
     }
 }
