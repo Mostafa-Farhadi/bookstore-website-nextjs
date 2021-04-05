@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: antiquewhite;
+    background-color: #faebd7;
 }
 
 #layout {
@@ -16,6 +16,7 @@ body {
         @import "./components/header.scss";
         #pages {
             height: 800px;
+            @import "./pages/index.scss";
         }
         @import "./components/footer.scss";
     }
