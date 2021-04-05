@@ -1,0 +1,19 @@
+#sidenav {
+    background-color: #34495e;
+    width: 250px;
+    height: 1000px;
+    display: flex;
+    flex-direction: column;
+    a:nth-child(1) {
+        margin-top: 70px;
+    }
+    a {
+        color: aquamarine;
+        text-decoration: none;
+        margin-top: 20px;
+        padding: 10px;
+        &:hover {
+            background-color: #486683;
+        }
+    }
+}
