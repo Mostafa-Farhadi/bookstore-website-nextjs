@@ -1,7 +1,7 @@
 const Home = () => {
   return ( 
       <section id="home">
-          <p>Home</p>
+          <img src="image/cover/cover.jpg" alt="cover"/>
       </section>
   );
 }
