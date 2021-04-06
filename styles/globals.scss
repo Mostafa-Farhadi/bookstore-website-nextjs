@@ -1,7 +1,6 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #faebd7;
 }
 
 #layout {
@@ -15,7 +14,8 @@ body {
         flex-direction: column;
         @import "./components/header.scss";
         #pages {
-            height: 800px;
+            background-color: #cfb59c;
+            height: 1000px;
             @import "./pages/index.scss";
         }
         @import "./components/footer.scss";
