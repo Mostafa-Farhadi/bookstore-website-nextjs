@@ -1,20 +1,18 @@
 body {
     margin: 0;
     padding: 0;
+    background-color: #cfb59c;
 }
 
 #layout {
     display: flex;
     @import "./components/sidenav.scss";
     #content {
-        margin-left: 250px;
-        height: 100%;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
+        margin-left: 200px;
+        width: 100vw;
         @import "./components/header.scss";
         #pages {
-            background-color: #cfb59c;
+            min-height: 100vh;
             @import "./pages/index.scss";
         }
         @import "./components/footer.scss";
