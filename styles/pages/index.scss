@@ -4,4 +4,12 @@
         margin-top: 20px;
         border-radius: 5px;
     }
+    .books {
+        width: 950px;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 20px auto;
+        justify-content: space-between;
+        @import "../components/book.scss";
+    }
 }
