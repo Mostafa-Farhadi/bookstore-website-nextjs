@@ -1,7 +1,8 @@
 #sidenav {
     background-color: #3f1905;
+    position: fixed;
     width: 250px;
-    height: 1200px;
+    height: 100%;
     display: flex;
     flex-direction: column;
     a:nth-child(1) {
