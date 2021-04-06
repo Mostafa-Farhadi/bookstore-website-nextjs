@@ -1,15 +1,18 @@
 #home {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     img {
         margin-top: 20px;
+        width: 70%;
         border-radius: 5px;
     }
     .books {
-        width: 950px;
+        max-width: 70%;
         display: flex;
+        justify-content: center;
         flex-wrap: wrap;
         margin: 20px auto;
-        justify-content: space-between;
         @import "../components/book.scss";
     }
 }
