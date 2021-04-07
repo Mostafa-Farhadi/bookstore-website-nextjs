@@ -89,7 +89,7 @@ export default (req, res) => {
       Genres: ["Novel", "Young adult fiction", "Bildungsroman", "Coming-of-age story", "Literary realism", "First-person narrative"]
     },
     {
-      name: "Alice's Adventures in Wonderland genre",
+      name: "Alice's Adventures in Wonderland",
       id: 12,
       Author: "Lewis Carroll",
       nationality: "British",
