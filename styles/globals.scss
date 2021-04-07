@@ -11,7 +11,7 @@ body {
     @import "./components/sidenav.scss";
     #content {
         margin-left: 200px;
-        @include mediaQuery(900px) {
+        @include mediaQuery(950px) {
             margin-left: 0;
         }
         width: 100vw;
