@@ -1,3 +1,5 @@
+@import "../mixin.scss";
+
 #sidenav {
     background-color: #3f1905;
     position: fixed;
@@ -6,6 +8,9 @@
     overflow-y: auto;
     display: flex;
     flex-direction: column;
+    @include mediaQuery(900px) {
+        width: 0;
+    }
     a:nth-child(1) {
         margin-top: 70px;
     }
