@@ -1,3 +1,5 @@
+@import "./mixin.scss";
+
 body {
     margin: 0;
     padding: 0;
@@ -9,6 +11,9 @@ body {
     @import "./components/sidenav.scss";
     #content {
         margin-left: 200px;
+        @include mediaQuery(900px) {
+            margin-left: 0;
+        }
         width: 100vw;
         @import "./components/header.scss";
         #pages {
