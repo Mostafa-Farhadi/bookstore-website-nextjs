@@ -1,0 +1,43 @@
+.details {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffe4c4;
+    max-width: 500px;
+    min-height: 250px;
+    padding-top: 30px;
+    margin: 50px auto;
+    img {
+        align-self: center;
+        height: 180px;
+        width: 120px;
+        margin-bottom: 20px;
+    }
+    p {
+        color: $fnt-brown;
+        margin: 0 0 15px 30px;
+        span {
+            font-family: $fnt-curs;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+    }
+    button {
+        height: 40px;
+        margin-top: 20px;
+        cursor: pointer;
+        background-color: $fnt-brown;
+        border: none;
+        outline: none;
+        font-size: 20px;
+        font-weight: bold;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        color: #ffead1;
+        letter-spacing: 2px;
+        &:hover {
+            background-color: #703e1a;
+        }
+        &:active {
+            background-color: #3f1f0a;
+        }
+    }
+}
