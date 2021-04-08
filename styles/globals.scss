@@ -20,6 +20,7 @@ body {
         #pages {
             min-height: 100vh;
             @import "./pages/index.scss";
+            @import "./pages/details.scss";
         }
         @import "./components/footer.scss";
     }
