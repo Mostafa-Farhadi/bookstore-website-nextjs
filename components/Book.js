@@ -1,7 +1,6 @@
 const Book = (props) => {
     const { url, name, author, price } = props
     const priceBefore = parseInt(price) + 5
-    console.log(priceBefore.toString());
 
     return ( 
         <div className="book">
