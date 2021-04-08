@@ -1,10 +1,10 @@
 import Layout from '../components/Layout'
 import '../styles/globals.scss'
 
-function MyApp({ Component }) {
+function MyApp({ Component, pageProps }) {
   return (
     <Layout >
-      <Component/>
+      <Component {...pageProps}/>
     </Layout>
   )
 }
