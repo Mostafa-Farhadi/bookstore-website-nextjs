@@ -1,7 +1,35 @@
 .book {
     text-align: center;
-    min-width: 200px;
+    min-width: 220px;
+    width: 220px;
     margin: 10px;
-    height: 250px;
+    min-height: 270px;
+    cursor: pointer;
     background-color: #ffe4c4;
+    &:hover {
+        background-color: #fcd8ad;
+    }
+    p {
+        color: $fnt-brown;
+    }
+    img {
+        width: 120px;
+        height: 180px;
+    }
+    p:nth-child(2) {
+        font-weight: bold;
+        font-size: 18px;
+    }
+    p:nth-child(3) {
+        font-family: $fnt-curs;
+    }
+    p:nth-child(4) {
+        font-family: $fnt-curs;
+        color: #008000;
+        span {
+            color: #ff0000;
+            text-decoration: line-through;
+            font-style: italic;
+        }
+    }
 }
