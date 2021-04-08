@@ -4,7 +4,7 @@ const Footer = () => {
     return ( 
         <footer id="footer">
             <Link href="https://nextjs.org/">
-                <img src="image/icon/nextjs.svg" alt="nextjs"/>
+                <img src="/image/icon/nextjs.png" alt="nextjs"/>
             </Link>
         </footer>
     );
