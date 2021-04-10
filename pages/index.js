@@ -15,7 +15,7 @@ const Home = ({ books }) => {
   return ( 
       <section id="home">
           <img src="image/cover/cover.jpg" alt="cover"/>
-          <h1>Best Seller</h1>
+          <h1>BOOK OFFERS</h1>
           <div className="books">
             <Book url={`image/books/${books[res[0]].name}.jpg`} name={books[res[0]].name} author={books[res[0]].author} price={books[res[0]].price} link={books[res[0]].id} />
             <Book url={`image/books/${books[res[1]].name}.jpg`} name={books[res[1]].name} author={books[res[1]].author} price={books[res[1]].price} link={books[res[1]].id} />
