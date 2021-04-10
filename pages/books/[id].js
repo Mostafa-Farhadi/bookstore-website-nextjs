@@ -2,10 +2,11 @@ const Details = ({ book }) => {
     return ( 
         <div className="details">
             <img src={`/image/books/${book.name}.jpg`} alt="book"/>
-            <p><span>Name:</span> {book.name}</p>
-            <p><span>Author:</span> {book.author}</p>
-            <p><span>Nationality:</span> {book.nationality}</p>
-            <p><span>Price:</span> ${book.price}</p>
+            <p><span>Name:</span>{book.name}</p>
+            <p><span>Author:</span>{book.author}</p>
+            <p><span>Nationality:</span>{book.nationality}</p>
+            <p><span>Price:</span>${book.price}</p>
+            <p><span>About Book:</span>{book.about}</p>
             <button>Buy</button>
         </div>
     );
