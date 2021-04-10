@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import Book from '../components/Book';
 
 const Home = ({ books }) => {
