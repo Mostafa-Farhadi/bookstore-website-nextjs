@@ -21,6 +21,7 @@ body {
             min-height: 100vh;
             @import "./pages/index.scss";
             @import "./pages/details.scss";
+            @import "./pages/genre.scss";
         }
         @import "./components/footer.scss";
     }
