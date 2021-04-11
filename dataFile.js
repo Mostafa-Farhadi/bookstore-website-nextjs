@@ -21,7 +21,7 @@ export const data = [
         name: "In Search of Lost Time",
         id: 2,
         author: "Marcel Proust",
-        nationality: "France",
+        nationality: "French",
         price: "15.99",
         genres: ["Modern literature", "Philosophical fiction", "Social novel", "Fictional autobiography"],
         about: "In Search of Lost Time, also translated as Remembrance of Things Past, is a novel in seven volumes by Marcel Proust. It is his most prominent work, known both for its length and its theme of involuntary memory; the most famous example of this is the 'episode of the madeleine,' which occurs early in the first volume."
@@ -48,7 +48,7 @@ export const data = [
         name: "Moby Dick",
         id: 5,
         author: "Herman Melville",
-        nationality: "American ",
+        nationality: "American",
         price: "15.99",
         genres: ["Novel", "Adventure fiction", "Epic", "Psychological fiction", "Nautical fiction"],
         about: "Moby-Dick; or, The Whale is an 1851 novel by American writer Herman Melville. The book is the sailor Ishmael's narrative of the obsessive quest of Ahab, captain of the whaling ship Pequod, for revenge on Moby Dick, the giant white sperm whale that on the ship's previous voyage bit off Ahab's leg at the knee."
