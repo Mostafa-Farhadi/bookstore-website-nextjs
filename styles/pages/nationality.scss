@@ -29,6 +29,20 @@
             }
         }
     }
+    .nationality {
+        position: fixed;
+        top: 280px;
+        margin-left: 5px;
+        width: 180px;
+        text-align: center;
+        background-color: #5e270a;
+        color: #e6ccb4;
+        padding: 10px;
+        border-radius: 5px;
+        @include mediaQuery(450px) {
+            width: 150px;
+        }
+    }
     .books-container {
         display: flex;
         justify-content: center;

@@ -3,7 +3,8 @@ import { v4 as uuidv4 } from 'uuid';
 import Book from '../components/Book';
 
 const Nationality = ({ books }) => {
-    const [bookDetails, setBookDetails] = useState(null)
+    const [bookDetails, setBookDetails] = useState(null);
+    const [selectedNationality, setSelectedNationality] = useState(null);
 
     let nationalities = [];
     for (let i = 0; i < (books.length - 1); i++) {
@@ -13,6 +14,7 @@ const Nationality = ({ books }) => {
 
     const nationalityHandler = (event) => {
         const nationality = event.target.value;
+        setSelectedNationality(nationality);
         let booksArr = []
         for (let k = 0; k < books.length; k++) {
             const nationalityArr = books[k].nationality;
@@ -30,6 +32,7 @@ const Nationality = ({ books }) => {
                 </option>
                 ))}
             </select>
+            {bookDetails === null ? '' : <p className="nationality">{selectedNationality}</p>}
             <div className="books-container">
                 {
                     bookDetails === null ? '' : bookDetails.map(book => (
