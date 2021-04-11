@@ -7,9 +7,9 @@ const Genre = ({ books }) => {
     const [selectedGenre, setSelectedGenre] = useState(null);
 
     let totalGenresArr = [];
-    for (let i = 0; i < books.length; i++) {
+    for (let i = 0; i < (books.length - 1); i++) {
         const genresArr = books[i].genres;
-        for (let j = 0; j < genresArr.length; j++) {
+        for (let j = 0; j < (genresArr.length - 1); j++) {
             totalGenresArr = totalGenresArr.indexOf(genresArr[j]) > -1 ? totalGenresArr : totalGenresArr.concat(genresArr[j]);
         }
     }
@@ -18,7 +18,7 @@ const Genre = ({ books }) => {
         const genre = event.target.value;
         setSelectedGenre(genre)
         let booksArr = []
-        for (let k = 0; k < books.length; k++) {
+        for (let k = 0; k < (books.length - 1); k++) {
             const genresArr = books[k].genres;
             genresArr.indexOf(genre) > -1 ? booksArr.push(books[k]) : '';
         }
