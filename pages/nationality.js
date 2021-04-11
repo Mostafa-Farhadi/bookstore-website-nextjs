@@ -25,7 +25,7 @@ const Nationality = ({ books }) => {
     
     return ( 
         <section id="nationality">
-            <select name="nationality" id="nationality" size="5">
+            <select name="nationality" id="nationalities" size="5">
             {nationalities.sort().map(nationality => (
                 <option value={nationality} key={uuidv4()} onClick={nationalityHandler}>
                     {nationality}
