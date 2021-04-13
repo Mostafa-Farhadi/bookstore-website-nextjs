@@ -7,7 +7,7 @@ const Author = ({ books }) => {
     const [selectedAuthor, setSelectedAuthor] = useState(null);
 
     let authors = [];
-    for (let i = 0; i < (books.length - 1); i++) {
+    for (let i = 0; i < books.length; i++) {
         const author = books[i].author;
             authors = authors.indexOf(author) > -1 ? authors : authors.concat(author);
     }
@@ -17,8 +17,8 @@ const Author = ({ books }) => {
         setSelectedAuthor(author);
         let booksArr = []
         for (let k = 0; k < books.length; k++) {
-            const authorArr = books[k].author;
-            authorArr.indexOf(author) > -1 ? booksArr.push(books[k]) : '';
+            const authorsArr = books[k].author;
+            authorsArr.indexOf(author) > -1 ? booksArr.push(books[k]) : booksArr;
         }
         setBookDetails(booksArr)
     }
@@ -37,7 +37,7 @@ const Author = ({ books }) => {
                 {
                     bookDetails === null ? '' : bookDetails.map(book => (
                         <Book key={book.id} 
-                            url={`image/books/${book.name}.jpg`} 
+                            src={`image/books/${book.name}.jpg`} 
                             name={book.name} 
                             author={book.author} 
                             price={book.price} 
