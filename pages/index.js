@@ -11,8 +11,7 @@ const Home = ({ books }) => {
     return randomArr;
   }
   const randNums = getRandArr(books.length);
-  console.log(randNums);
-  
+
   return ( 
       <section id="home">
           <img src="image/cover/cover.jpg" alt="cover"/>
