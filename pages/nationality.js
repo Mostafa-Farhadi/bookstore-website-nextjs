@@ -7,7 +7,7 @@ const Nationality = ({ books }) => {
     const [selectedNationality, setSelectedNationality] = useState(null);
 
     let nationalities = [];
-    for (let i = 0; i < (books.length - 1); i++) {
+    for (let i = 0; i < books.length; i++) {
         const nationality = books[i].nationality;
             nationalities = nationalities.indexOf(nationality) > -1 ? nationalities : nationalities.concat(nationality);
     }
@@ -17,8 +17,8 @@ const Nationality = ({ books }) => {
         setSelectedNationality(nationality);
         let booksArr = []
         for (let k = 0; k < books.length; k++) {
-            const nationalityArr = books[k].nationality;
-            nationalityArr.indexOf(nationality) > -1 ? booksArr.push(books[k]) : '';
+            const nationalitiesArr = books[k].nationality;
+            nationalitiesArr.indexOf(nationality) > -1 ? booksArr.push(books[k]) : '';
         }
         setBookDetails(booksArr)
     }
@@ -37,7 +37,7 @@ const Nationality = ({ books }) => {
                 {
                     bookDetails === null ? '' : bookDetails.map(book => (
                         <Book key={book.id} 
-                            url={`image/books/${book.name}.jpg`} 
+                            src={`image/books/${book.name}.jpg`} 
                             name={book.name} 
                             author={book.author} 
                             price={book.price} 
