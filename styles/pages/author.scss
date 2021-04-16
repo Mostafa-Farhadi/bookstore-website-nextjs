@@ -1,99 +1,33 @@
-@import "../mixin.scss";
-
 #author {
-    margin: 20px 0 0 10px;
     display: flex;
+    flex-direction: column;
     select {
-        position: fixed;
-        background-color: #331602;
-        color: #faebd7;
-        width: 200px;
+        margin: 50px auto;
+        background-color: $pallate1;
+        color: $pallate5;
+        width: 60vw;
+        height: 50px;
+        font-size: 18px;
+        padding-left: 20px;
         outline: none;
         border: none;
-        margin-top: 10px;
-        @include mediaQuery(450px) {
-            width: 170px;
-        }
-        &::-webkit-scrollbar {
-            width: 10px;
-        }
-        &::-webkit-scrollbar-thumb {
-        background: $fnt-brown; 
-        border-radius: 2px;
-        }
-        &::-webkit-scrollbar-thumb:hover {
-        background: #7e4939; 
-        }
+        border-radius: 20px;
         option {
             padding: 10px;
-            font-family: $fnt-curs;
-            border-bottom: #91725b 1px solid;
-            color: #faebd7;
+            font-family: $font-family1;
+            border-bottom: $pallate4 1px solid;
+            color: $pallate5;
             cursor: pointer;
             &:hover {
-                background-color: #faebd7;
-                color: $fnt-brown;
+                background-color: $pallate5;
+                color: $pallate2;
             }
-        }
-    }
-    .author {
-        position: fixed;
-        top: 410px;
-        width: 180px;
-        text-align: center;
-        background-color: #5e270a;
-        color: #e6ccb4;
-        padding: 10px;
-        border-radius: 5px;
-        @include mediaQuery(450px) {
-            width: 150px;
         }
     }
     .books-container {
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
-        margin-left: 220px;
-        @include mediaQuery(450px) {
-            margin-left: 170px;
-        }
     }
-    .book {
-        text-align: center;
-        width: 200px;
-        margin: 10px;
-        height: 360px;
-        cursor: pointer;
-        background-color: #ffe4c4;
-        @include mediaQuery(450px) {
-            width: 160px;
-        }
-        &:hover {
-            background-color: #fcd8ad;
-        }
-        p {
-            color: $fnt-brown;
-        }
-        img {
-            width: 120px;
-            height: 180px;
-            margin-top: 20px;
-        }
-        p:nth-child(2) {
-            font-weight: bold;
-            font-size: 18px;
-        }
-        p:nth-child(3) {
-            font-family: $fnt-curs;
-        }
-        p:nth-child(4) {
-            font-family: $fnt-curs;
-            color: #008000;
-            span {
-                color: #ff0000;
-                text-decoration: line-through;
-                font-style: italic;
-            }
-        }
-    }
+    @import "../components/book.scss";
 }
