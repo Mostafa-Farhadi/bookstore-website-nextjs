@@ -1,3 +1,5 @@
+import { v4 as uuidv4 } from 'uuid';
+
 const Details = ({ book }) => {
     return ( 
         <div className="details">
@@ -7,6 +9,14 @@ const Details = ({ book }) => {
             <p><span>Nationality:</span>{book.nationality}</p>
             <p><span>Price:</span>${book.price}</p>
             <p><span>About Book:</span>{book.about}</p>
+            <p><span>Genres:</span></p>
+            <ul>
+                {
+                    book.genres.map(genre => (
+                        <li key={uuidv4()}>{genre}</li>
+                    ))
+                }
+            </ul>
             <button>Buy</button>
         </div>
     );
