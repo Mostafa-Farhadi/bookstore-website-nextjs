@@ -1,16 +1,15 @@
 import Link from "next/link";
 
 const Book = (props) => {
-    const { src, name, author, price, link } = props
-    const priceBefore = parseInt(price) + 5
+    const { src, name, author, price, id } = props
 
     return ( 
-        <Link href={`/books/${link}`}>
+        <Link href={`/books/${id}`}>
             <div className="book">
                 <img src={src} alt="book"/>
                 <p>{name}</p>
                 <p>By {author}</p>
-                <p><span>${priceBefore}</span> &nbsp; ${price}</p>
+                <p>${price}</p>
             </div>
         </Link>
     );
