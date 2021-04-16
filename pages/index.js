@@ -1,31 +1,34 @@
+import { useState, useEffect} from "react";
 import Book from '../components/Book';
 
 const Home = ({ books }) => {
+  const [randumNumbers, setRandumNumbers] = useState([])
 
-  function getRandArr(arrLength) {
-    let randomArr = [];
-    do {
-        let randomNum = Math.floor(Math.random() * arrLength);
+  useEffect(() => {
+      let randomArr = [];
+      do {
+        let randomNum = Math.floor(Math.random() * books.length);
         randomArr = randomArr.indexOf(randomNum) > -1 ? randomArr : randomArr.concat(randomNum);
-    }while (randomArr.length < 4)
-    return randomArr;
-  }
-  const randNums = getRandArr(books.length);
+      }while (randomArr.length < 5)
+      setRandumNumbers(randomArr)
+  }, [books])
 
   return ( 
       <section id="home">
-          <img src="image/cover/cover.jpg" alt="cover"/>
+          <div className="cover">
+            
+          </div>
           <h1>BOOK OFFERS</h1>
           <div className="books">
             {
-              randNums.map(randNum => (
+              randumNumbers.map(randNum => (
                 <Book 
                   key={randNum} 
                   src={`/image/books/${books[randNum].name}.jpg`} 
                   name={books[randNum].name} 
                   author={books[randNum].author} 
                   price={books[randNum].price} 
-                  link={books[randNum].id} />
+                  id={books[randNum].id} />
               ))
             }
           </div>
