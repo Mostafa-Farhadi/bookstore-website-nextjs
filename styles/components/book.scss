@@ -1,15 +1,19 @@
 .book {
     text-align: center;
+    min-width: 220px;
     width: 220px;
     margin: 10px;
     min-height: 270px;
     cursor: pointer;
-    background-color: #ffe4c4;
+    background-color: $pallate1;
     &:hover {
-        background-color: #fcd8ad;
+        background-color: $pallate4;
+        p {
+            color: $pallate1;
+        }
     }
     p {
-        color: $fnt-brown;
+        color: $pallate5;
     }
     img {
         width: 120px;
@@ -21,15 +25,10 @@
         font-size: 18px;
     }
     p:nth-child(3) {
-        font-family: $fnt-curs;
+        font-family: $font-family1;
     }
     p:nth-child(4) {
-        font-family: $fnt-curs;
-        color: #008000;
-        span {
-            color: #ff0000;
-            text-decoration: line-through;
-            font-style: italic;
-        }
+        font-family: $font-family1;
+        font-style: italic;
     }
 }
