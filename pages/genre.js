@@ -4,7 +4,7 @@ import Book from '../components/Book';
 
 const Genre = ({ books }) => {
     const [bookDetails, setBookDetails] = useState(null);
-    const [selectedGenre, setSelectedGenre] = useState(null);
+    const [value, setValue] = useState("select");
 
     let totalGenres = [];
     for (let i = 0; i < books.length; i++) {
@@ -16,7 +16,7 @@ const Genre = ({ books }) => {
 
     const genreHandler = (event) => {
         const genre = event.target.value;
-        setSelectedGenre(genre);
+        setValue(genre)
         let booksArr = [];
         for (let k = 0; k < books.length; k++) {
             const genresArr = books[k].genres;
@@ -27,12 +27,12 @@ const Genre = ({ books }) => {
 
     return (
         <section id="genre">
-            <select name="genres" id="genres" size="8">
-            {totalGenres.sort().map(genre => (
-                <option value={genre} key={uuidv4()} onClick={genreHandler}>{genre}</option>
+            <select value={value} onChange={genreHandler}>
+                <option value="select">SELECT GENRE</option>
+                {totalGenres.sort().map(genre => (
+                    <option value={genre} key={uuidv4()} onClick={genreHandler}>{genre}</option>
                 ))}
             </select>
-            {bookDetails === null ? '' : <p className="genre">{selectedGenre}</p>}
             <div className="books-container">
                 {
                     bookDetails === null ? '' : bookDetails.map(book => (
@@ -41,7 +41,7 @@ const Genre = ({ books }) => {
                             name={book.name} 
                             author={book.author} 
                             price={book.price} 
-                            link={book.id}
+                            id={book.id}
                         />
                     ))
                 }
