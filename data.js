@@ -58,7 +58,7 @@ export const data = [
         id: 7,
         author: "Francis Scott Key Fitzgerald",
         nationality: "American",
-        price: "",
+        price: "12.99",
         genres: ["Short story", "Fiction"],
         about: "Tales of the Jazz Age is a collection of eleven short stories by F. Scott Fitzgerald. Divided into three separate parts, according to subject matter, it includes one of his better-known short stories, 'The Curious Case of Benjamin Button'."
     },
