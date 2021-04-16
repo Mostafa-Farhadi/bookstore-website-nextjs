@@ -4,27 +4,18 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #cfb59c;
+    background-color: $pallate3;
 }
 
 #layout {
-    display: flex;
-    @import "./components/sidenav.scss";
-    #content {
-        margin-left: 200px;
-        @include mediaQuery(950px) {
-            margin-left: 0;
-        }
-        width: 100vw;
-        @import "./components/header.scss";
-        #pages {
-            min-height: 100vh;
-            @import "./pages/index.scss";
-            @import "./pages/details.scss";
-            @import "./pages/genre.scss";
-            @import "./pages/author.scss";
-            @import "./pages/nationality.scss";
-        }
-        @import "./components/footer.scss";
+    @import "./components/header.scss";
+    #pages {
+        min-height: 100vh;
+        @import "./pages/index.scss";
+        @import "./pages/genre.scss";
+        @import "./pages/author.scss";
+        @import "./pages/nationality.scss";
+        @import "./pages/details.scss";
     }
+    @import "./components/footer.scss";
 }
