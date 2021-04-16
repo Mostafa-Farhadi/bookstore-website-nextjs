@@ -4,7 +4,9 @@ const Header = () => {
     return ( 
         <header id="header">
             <Link href="/"><a>Home</a></Link>
-            <input type="search" name="search" id="search" placeholder="Search your favourite book"/>
+            <Link href="/genre"><a>Genre</a></Link>
+            <Link href="/author"><a>Author</a></Link>
+            <Link href="/nationality"><a>Nationality</a></Link>
         </header>
     );
 }
