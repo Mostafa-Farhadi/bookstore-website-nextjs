@@ -1,14 +1,9 @@
 #footer {
-    background-color: #5e270a;
-    height: 150px;
-    display: flex;
-    justify-content: center;
+    background-color: $pallate3;
+    text-align: center;
     img {
         cursor: pointer;
         width: 150px;
         padding: 10px 80px;
-        &:hover {
-            background-color: #572409;
-        }
     }
 }
