@@ -7,6 +7,12 @@
     top: 0;
     height: 50px;
     background-color: $pallate3;
+    @include mediaQuery (640px) {
+        position: fixed;
+        top: unset;
+        bottom: 0;
+        width: 100%;
+    }
     a {
         text-decoration: none;
         position: relative;
@@ -14,6 +20,9 @@
         color: $pallate1;
         font-size: 20px;
         letter-spacing: 1px;
+        @include mediaQuery (640px) {
+            font-size: 18px;
+        }
         &::after {
             content: "";
             position: absolute;
