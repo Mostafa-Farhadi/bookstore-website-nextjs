@@ -16,7 +16,7 @@ const Home = ({ books }) => {
   return ( 
       <section id="home">
           <div className="cover">
-            
+              <img src="/image/cover/cover.jpg" alt="cover"/>
           </div>
           <h1>BOOK OFFERS</h1>
           <div className="books">
