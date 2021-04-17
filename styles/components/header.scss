@@ -20,8 +20,9 @@
         color: $pallate1;
         font-size: 20px;
         letter-spacing: 1px;
-        @include mediaQuery (640px) {
-            font-size: 18px;
+        img {
+            width: 20px;
+            margin-right: 5px;
         }
         &::after {
             content: "";
@@ -41,6 +42,17 @@
         }
         &:active {
             color: $pallate3;
+        }
+        @include mediaQuery (640px) {
+            img {
+                width: 30px;
+            }
+            span {
+                display: none;
+            }
+            &::after {
+                top: 35px;
+            }
         }
     }
 }
