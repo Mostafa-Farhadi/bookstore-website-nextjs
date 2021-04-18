@@ -1,6 +1,6 @@
-import { useState} from "react";
 import { v4 as uuidv4 } from 'uuid';
 import Book from '../components/Book';
+import SearchBox from '../components/SearchBox';
 
 const Nationality = ({ books }) => {
 
@@ -21,6 +21,7 @@ const Nationality = ({ books }) => {
 
     return ( 
         <section id="nationality">
+            <SearchBox books={books} />
             {
                 nationalities.map(nationality => (
                     <div key={uuidv4()}>
