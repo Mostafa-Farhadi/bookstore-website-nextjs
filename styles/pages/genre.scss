@@ -12,6 +12,12 @@
         outline: none;
         border: none;
         border-radius: 20px;
+        @include mediaQuery (768px) {
+            width: 70vw;
+        }
+        @include mediaQuery (640px) {
+            width: 80vw;
+        }
         option {
             padding: 10px;
             font-family: $font-family1;
