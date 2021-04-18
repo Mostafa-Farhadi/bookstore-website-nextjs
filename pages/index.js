@@ -1,5 +1,6 @@
 import { useState, useEffect} from "react";
 import Book from '../components/Book';
+import SearchBox from '../components/SearchBox';
 
 const Home = ({ books }) => {
   const [randumNumbers, setRandumNumbers] = useState([])
@@ -13,25 +14,26 @@ const Home = ({ books }) => {
       setRandumNumbers(randomArr)
   }, [books])
 
-  return ( 
+  return (
       <section id="home">
-          <div className="cover">
-              <img src="/image/cover/cover.jpg" alt="cover"/>
-          </div>
-          <h1>BOOK OFFERS</h1>
-          <div className="books">
-            {
-              randumNumbers.map(randNum => (
-                <Book 
-                  key={randNum} 
-                  src={`/image/books/${books[randNum].name}.jpg`} 
-                  name={books[randNum].name} 
-                  author={books[randNum].author} 
-                  price={books[randNum].price} 
-                  id={books[randNum].id} />
-              ))
-            }
-          </div>
+        <SearchBox books={books} />
+        <div className="cover">
+            <img src="/image/cover/cover.png" alt="cover"/>
+        </div>
+        <h1>BOOK OFFERS</h1>
+        <div className="books">
+          {
+            randumNumbers.map(randNum => (
+              <Book 
+                key={randNum} 
+                src={`/image/books/${books[randNum].name}.jpg`} 
+                name={books[randNum].name} 
+                author={books[randNum].author} 
+                price={books[randNum].price} 
+                id={books[randNum].id} />
+            ))
+          }
+        </div>
       </section>
   );
 }
