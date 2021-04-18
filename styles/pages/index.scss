@@ -6,7 +6,7 @@
     align-items: center;
     .cover {
         img {
-            width: 80vw;
+            width: 70vw;
             @include mediaQuery (640px) {
                 width: 100vw;
             }
