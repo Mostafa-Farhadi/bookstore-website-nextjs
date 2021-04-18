@@ -1,6 +1,7 @@
 import { useState} from "react";
 import { v4 as uuidv4 } from 'uuid';
 import Book from '../components/Book';
+import SearchBox from '../components/SearchBox';
 
 const Genre = ({ books }) => {
     const [bookDetails, setBookDetails] = useState(null);
@@ -27,10 +28,11 @@ const Genre = ({ books }) => {
 
     return (
         <section id="genre">
+            <SearchBox books={books} />
             <select value={value} onChange={genreHandler}>
                 <option value="select">SELECT GENRE</option>
                 {totalGenres.sort().map(genre => (
-                    <option value={genre} key={uuidv4()} onClick={genreHandler}>{genre}</option>
+                    <option value={genre} key={uuidv4()}>{genre}</option>
                 ))}
             </select>
             <div className="books-container">
