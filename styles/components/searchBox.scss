@@ -1,0 +1,56 @@
+.search-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+    margin: 10px 0;
+    position: relative;
+    input {
+        width: 65vw;
+        height: 50px;
+        font-size: 16px;
+        padding: 0 20px;
+        outline: none;
+        border: none;
+        border-radius: 10px;
+        color: $pallate1;
+        background-color: $pallate5;
+    }
+    div {
+        overflow-y: auto;
+        max-height: 300px;
+        top: 70px;
+        position: absolute;
+        background-color: $pallate5;
+        a {
+            width: 60vw;
+            display: block;
+            text-decoration: none;
+            margin: 1px 0;
+            padding: 10px;
+            font-size: 18px;
+            font-family: $font-family1;
+            background-color: $pallate4;
+            color: $pallate1;
+            cursor: pointer;
+            &:hover {
+                color: $pallate5;
+                background-color: $pallate2;
+            }
+            &:active {
+                background-color: $pallate1;
+            }
+        }
+    }
+    @include mediaQuery (768px) {
+        input, a {
+            width: 80vw;
+        }
+    }
+    @include mediaQuery (640px) {
+        margin: 0;
+        input, a {
+            width: 90vw;
+        }
+    }
+}
