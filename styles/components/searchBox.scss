@@ -31,7 +31,7 @@
             font-size: 18px;
             font-family: $font-family1;
             background-color: $pallate4;
-            color: $pallate1;
+            color: $pallate2;
             cursor: pointer;
             &:hover {
                 color: $pallate5;
@@ -39,6 +39,10 @@
             }
             &:active {
                 background-color: $pallate1;
+            }
+            span {
+                color: $pallate1;
+                font-weight: bold;
             }
         }
     }
