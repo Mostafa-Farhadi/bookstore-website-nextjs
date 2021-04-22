@@ -1,5 +1,3 @@
-import { v4 as uuidv4 } from 'uuid';
-
 const Details = ({ book }) => {
     return ( 
         <div className="details">
@@ -12,8 +10,8 @@ const Details = ({ book }) => {
             <p><span>Genres:</span></p>
             <ul>
                 {
-                    book.genres.map(genre => (
-                        <li key={uuidv4()}>{genre}</li>
+                    book.genres.map((genre, index) => (
+                        <li key={index}>{genre}</li>
                     ))
                 }
             </ul>

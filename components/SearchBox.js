@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { v4 as uuidv4 } from 'uuid';
 import Link from "next/link";
 
 const SearchBox = ({ books }) => {
@@ -42,8 +41,8 @@ const SearchBox = ({ books }) => {
                 />
             </form>
             <div>
-                {suggests.map(suggest => (
-                    <Link href={`/books/${suggest[1] + 1}`} key={uuidv4()}>
+                {suggests.map((suggest, index) => (
+                    <Link href={`/books/${suggest[1] + 1}`} key={index}>
                         <a><span>{enteredText}</span>{suggest[0]}</a>
                     </Link>
                 ))}

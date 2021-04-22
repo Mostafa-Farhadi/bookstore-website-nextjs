@@ -1,5 +1,4 @@
 import { useState} from "react";
-import { v4 as uuidv4 } from 'uuid';
 import Book from '../components/Book';
 import SearchBox from '../components/SearchBox';
 
@@ -29,8 +28,8 @@ const Author = ({ books }) => {
             <SearchBox books={books} />
             <select value={value} onChange={authorHandler}>
                 <option value="select">SELECT AUTHOR</option>
-                {authors.sort().map(author => (
-                    <option value={author} key={uuidv4()}>
+                {authors.sort().map((author, index) => (
+                    <option value={author} key={index}>
                         {author}
                     </option>
                 ))}
