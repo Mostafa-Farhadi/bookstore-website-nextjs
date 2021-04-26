@@ -11,14 +11,13 @@ const SearchBox = ({ books }) => {
     }
 
     const suggestHandler = event => {
-        const name = event.target.value;
-        setEnteredText(name);
-        const nameLowerCase = event.target.value.toLowerCase();
-        if (nameLowerCase !== "") {
+        const text = event.target.value.toLowerCase();
+        if (text !== "") {
             let suggestionsArr = [];
             for (let i = 0; i < booksName.length; i++) {
-                if (booksName[i].toLowerCase().indexOf(nameLowerCase) > -1) {
-                    suggestionsArr.push([booksName[i].replace(booksName[i].substr(0, nameLowerCase.length), ""), i]);
+                if (booksName[i].slice(0, text.length).toLowerCase() === text) {
+                    suggestionsArr.push([booksName[i].replace(booksName[i].substr(0, text.length), ""), i]);
+                    setEnteredText(booksName[i].slice(0, text.length));
                 } else {
                     suggestionsArr;
                 }
