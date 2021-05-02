@@ -1,8 +1,9 @@
-import Link from 'next/link'
+import Link from 'next/link';
+import Style from '../styles/components/header.module.scss';
 
 const Header = () => {
     return ( 
-        <header id="header">
+        <header className={Style.header}>
             <Link href="/">
                 <a><img src="/image/icon/home.png" alt="home"/><span>Home</span></a>
             </Link>
@@ -17,6 +18,6 @@ const Header = () => {
             </Link>
         </header>
     );
-}
+};
 
 export default Header;

@@ -1,6 +1,7 @@
 import { useState} from "react";
 import Book from '../components/Book';
-import SearchBox from '../components/SearchBox';
+import Search from '../components/Search';
+import Style from '../styles/pages/author.module.scss';
 
 const Author = ({ books }) => {
     const [bookDetails, setBookDetails] = useState(null);
@@ -10,7 +11,7 @@ const Author = ({ books }) => {
     for (let i = 0; i < books.length; i++) {
         const author = books[i].author;
             authors = authors.indexOf(author) > -1 ? authors : authors.concat(author);
-    }
+    };
 
     const authorHandler = (event) => {
         const author = event.target.value;
@@ -19,13 +20,13 @@ const Author = ({ books }) => {
         for (let k = 0; k < books.length; k++) {
             const authorsArr = books[k].author;
             authorsArr.indexOf(author) > -1 ? booksArr.push(books[k]) : booksArr;
-        }
+        };
         setBookDetails(booksArr)
-    }
+    };
     
     return ( 
-        <section id="author">
-            <SearchBox books={books} />
+        <section className={Style.author}>
+            <Search books={books} />
             <select value={value} onChange={authorHandler}>
                 <option value="select">SELECT AUTHOR</option>
                 {authors.sort().map((author, index) => (
@@ -34,7 +35,7 @@ const Author = ({ books }) => {
                     </option>
                 ))}
             </select>
-            <div className="books-container">
+            <div className={Style.booksContainer}>
                 {
                     bookDetails === null ? '' : bookDetails.map(book => (
                         <Book key={book.id} 

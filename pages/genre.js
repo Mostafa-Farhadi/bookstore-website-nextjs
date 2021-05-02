@@ -1,6 +1,7 @@
 import { useState} from "react";
 import Book from '../components/Book';
-import SearchBox from '../components/SearchBox';
+import Search from '../components/Search';
+import Style from '../styles/pages/genre.module.scss';
 
 const Genre = ({ books }) => {
     const [bookDetails, setBookDetails] = useState(null);
@@ -11,30 +12,30 @@ const Genre = ({ books }) => {
         const genresArr = books[i].genres;
         for (let j = 0; j < genresArr.length; j++) {
             totalGenres = totalGenres.indexOf(genresArr[j]) > -1 ? totalGenres : totalGenres.concat(genresArr[j]);
-        }
-    }
+        };
+    };
 
     const genreHandler = (event) => {
         const genre = event.target.value;
-        setValue(genre)
+        setValue(genre);
         let booksArr = [];
         for (let k = 0; k < books.length; k++) {
             const genresArr = books[k].genres;
             genresArr.indexOf(genre) > -1 ? booksArr.push(books[k]) : booksArr;
-        }
+        };
         setBookDetails(booksArr);
-    }
+    };
 
     return (
-        <section id="genre">
-            <SearchBox books={books} />
+        <section className={Style.genre}>
+            <Search books={books} />
             <select value={value} onChange={genreHandler}>
                 <option value="select">SELECT GENRE</option>
                 {totalGenres.sort().map((genre, index) => (
                     <option value={genre} key={index}>{genre}</option>
                 ))}
             </select>
-            <div className="books-container">
+            <div className={Style.booksContainer}>
                 {
                     bookDetails === null ? '' : bookDetails.map(book => (
                         <Book key={book.id} 
@@ -49,17 +50,17 @@ const Genre = ({ books }) => {
             </div>
         </section>
     );
-}
+};
 
 export async function getStaticProps() {
-    const res = await fetch("http://localhost:3000/api/books")
-    const books = await res.json()
+    const res = await fetch("http://localhost:3000/api/books");
+    const books = await res.json();
     
     return {
         props: {
             books,
         },
-    }
-}
+    };
+};
 
 export default Genre;

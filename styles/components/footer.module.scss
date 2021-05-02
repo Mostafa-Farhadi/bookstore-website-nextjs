@@ -1,4 +1,7 @@
-#footer {
+@import "../mixin.scss";
+@import "../variables.scss";
+
+.footer {
     background-color: $pallate3;
     text-align: center;
     img {

@@ -1,5 +1,6 @@
 import Book from '../components/Book';
-import SearchBox from '../components/SearchBox';
+import Search from '../components/Search';
+import Style from '../styles/pages/nationality.module.scss'
 
 const Nationality = ({ books }) => {
 
@@ -7,27 +8,27 @@ const Nationality = ({ books }) => {
     for (let i = 0; i < books.length; i++) {
         const nationality = books[i].nationality;
             nationalities = nationalities.indexOf(nationality) > -1 ? nationalities : nationalities.concat(nationality);
-    }
+    };
 
     const nation = country => {
-        let booksArr = []
+        let booksArr = [];
         for (let k = 0; k < books.length; k++) {
             const nationalitiesArr = books[k].nationality;
             nationalitiesArr.indexOf(country) > -1 ? booksArr.push(books[k]) : '';
-        }
-        return booksArr
-    }
+        };
+        return booksArr;
+    };
 
     return ( 
-        <section id="nationality">
-            <SearchBox books={books} />
+        <section className={Style.nationality}>
+            <Search books={books} />
             {
                 nationalities.map((nationality, index) => (
                     <div key={index}>
-                        <div className="books-header">
+                        <div className={Style.booksHeader}>
                             <h1>{nationality.toUpperCase()}</h1>
                         </div>
-                        <div className="books">
+                        <div className={Style.books}>
                             {
                                 nation(nationality).map(nation => (
                                     <Book key={nation.id} 
@@ -45,17 +46,17 @@ const Nationality = ({ books }) => {
             }
         </section>
     );
-}
+};
 
 export async function getStaticProps() {
-    const res = await fetch("http://localhost:3000/api/books")
-    const books = await res.json()
+    const res = await fetch("http://localhost:3000/api/books");
+    const books = await res.json();
     
     return {
         props: {
             books,
-        },
-    }
-}
+        }
+    };
+};
 
 export default Nationality;

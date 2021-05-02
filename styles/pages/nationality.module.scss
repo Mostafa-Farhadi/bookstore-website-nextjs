@@ -1,8 +1,11 @@
-#nationality {
+@import "../mixin.scss";
+@import "../variables.scss";
+
+.nationality {
     display: flex;
     flex-direction: column;
     margin-top: 10px;
-    .books-header {
+    .booksHeader {
         h1 {
         justify-self: flex-start;
         margin-left: 10px;
@@ -16,5 +19,4 @@
         overflow-x: auto;
         margin-bottom: 50px;
     }
-    @import "../components/book.scss";
 }

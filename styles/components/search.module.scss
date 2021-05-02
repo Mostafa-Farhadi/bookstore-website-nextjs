@@ -1,4 +1,7 @@
-.search-box {
+@import "../mixin.scss";
+@import "../variables.scss";
+
+.search {
     display: flex;
     flex-direction: column;
     align-items: center;

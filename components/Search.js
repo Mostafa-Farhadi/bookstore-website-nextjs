@@ -1,14 +1,15 @@
 import { useState } from "react";
 import Link from "next/link";
+import Style from '../styles/components/search.module.scss';
 
-const SearchBox = ({ books }) => {
+const Search = ({ books }) => {
     const [suggests, setSuggests] = useState([]);
-    const [enteredText, setEnteredText] = useState("")
+    const [enteredText, setEnteredText] = useState("");
 
     let booksName = [];
     for (let i = 0; i < books.length; i++) {
         booksName.push(books[i].name);
-    }
+    };
 
     const suggestHandler = event => {
         const text = event.target.value.toLowerCase();
@@ -25,16 +26,14 @@ const SearchBox = ({ books }) => {
             setSuggests(suggestionsArr);
         } else {
             setSuggests([]);
-        }
-    }
+        };
+    };
 
     return ( 
-        <section className="search-box">
+        <section className={Style.search}>
             <form autoComplete="off">
                 <input 
-                    type="search" 
-                    name="search" 
-                    id="search" 
+                    type="search"
                     placeholder="Search your favourite book..."
                     onChange={event => suggestHandler(event)}
                 />
@@ -48,6 +47,6 @@ const SearchBox = ({ books }) => {
             </div>
         </section>
     );
-}
+};
 
-export default SearchBox;
+export default Search;

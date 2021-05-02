@@ -1,4 +1,7 @@
-#header {
+@import "../mixin.scss";
+@import "../variables.scss";
+
+.header {
     position: sticky;
     z-index: 1;
     display: flex;

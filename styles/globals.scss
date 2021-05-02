@@ -1,22 +1,7 @@
-@import "./mixin.scss";
 @import "./variables.scss";
 
 body {
     margin: 0;
     padding: 0;
     background-color: $pallate3;
-}
-
-#layout {
-    @import "./components/header.scss";
-    #pages {
-        min-height: 100vh;
-        @import "./pages/index.scss";
-        @import "./pages/genre.scss";
-        @import "./pages/author.scss";
-        @import "./pages/nationality.scss";
-        @import "./pages/details.scss";
-        @import "./components/searchBox.scss";
-    }
-    @import "./components/footer.scss";
 }

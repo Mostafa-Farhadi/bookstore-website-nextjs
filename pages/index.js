@@ -1,27 +1,28 @@
 import { useState, useEffect} from "react";
 import Book from '../components/Book';
-import SearchBox from '../components/SearchBox';
+import Search from '../components/Search';
+import Style from '../styles/pages/index.module.scss';
 
 const Home = ({ books }) => {
-  const [randumNumbers, setRandumNumbers] = useState([])
+  const [randumNumbers, setRandumNumbers] = useState([]);
 
   useEffect(() => {
       let randomArr = [];
       do {
         let randomNum = Math.floor(Math.random() * books.length);
         randomArr = randomArr.indexOf(randomNum) > -1 ? randomArr : randomArr.concat(randomNum);
-      }while (randomArr.length < 5)
-      setRandumNumbers(randomArr)
-  }, [books])
+      } while (randomArr.length < 5)
+      setRandumNumbers(randomArr);
+  }, [books]);
 
   return (
-      <section id="home">
-        <SearchBox books={books} />
-        <div className="cover">
+      <section className={Style.index}>
+        <Search books={books} />
+        <div className={Style.cover}>
             <img src="/image/cover/cover.png" alt="cover"/>
         </div>
         <h1>BOOK OFFERS</h1>
-        <div className="books">
+        <div className={Style.books}>
           {
             randumNumbers.map(randNum => (
               <Book 
@@ -36,17 +37,17 @@ const Home = ({ books }) => {
         </div>
       </section>
   );
-}
+};
 
 export async function getStaticProps() {
-  const res = await fetch("http://localhost:3000/api/books")
-  const books = await res.json()
+  const res = await fetch("http://localhost:3000/api/books");
+  const books = await res.json();
   
   return {
     props: {
       books,
-    },
-  }
-}
+    }
+  };
+};
 
 export default Home;
