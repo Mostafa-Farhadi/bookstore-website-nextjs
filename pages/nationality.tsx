@@ -1,19 +1,20 @@
 import Book from '../components/Book';
 import Search from '../components/Search';
 import Style from '../styles/pages/nationality.module.scss'
+import { GetStaticProps } from 'next';
+import { IBooks, IProps } from "../interfaces";
 
-const Nationality = ({ books }) => {
-
-    let nationalities = [];
+const Nationality = ({ books }: IProps) => {
+    let nationalities: string[] = [];
     for (let i = 0; i < books.length; i++) {
-        const nationality = books[i].nationality;
-            nationalities = nationalities.indexOf(nationality) > -1 ? nationalities : nationalities.concat(nationality);
+        const nationality: string = books[i].nationality;
+        nationalities = nationalities.indexOf(nationality) > -1 ? nationalities : nationalities.concat(nationality);
     };
 
-    const nation = country => {
-        let booksArr = [];
+    const nation = (country: string): IBooks[] => {
+        let booksArr: IBooks[] = [];
         for (let k = 0; k < books.length; k++) {
-            const nationalitiesArr = books[k].nationality;
+            const nationalitiesArr: string = books[k].nationality;
             nationalitiesArr.indexOf(country) > -1 ? booksArr.push(books[k]) : '';
         };
         return booksArr;
@@ -23,7 +24,7 @@ const Nationality = ({ books }) => {
         <section className={Style.nationality}>
             <Search books={books} />
             {
-                nationalities.map((nationality, index) => (
+                nationalities.map((nationality: string, index: number) => (
                     <div key={index}>
                         <div className={Style.booksHeader}>
                             <h1>{nationality.toUpperCase()}</h1>
@@ -48,7 +49,7 @@ const Nationality = ({ books }) => {
     );
 };
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async () => {
     const res = await fetch("http://localhost:3000/api/books");
     const books = await res.json();
     

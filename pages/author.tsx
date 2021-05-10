@@ -2,24 +2,26 @@ import { useState} from "react";
 import Book from '../components/Book';
 import Search from '../components/Search';
 import Style from '../styles/pages/author.module.scss';
+import { GetStaticProps } from 'next';
+import { IEvent, IBooks, IProps } from "../interfaces";
 
-const Author = ({ books }) => {
-    const [bookDetails, setBookDetails] = useState(null);
-    const [value, setValue] = useState("select");
+const Author = ({ books }: IProps) => {
+    const [bookDetails, setBookDetails] = useState<IBooks[]>([]);
+    const [value, setValue] = useState<string>("select");
 
-    let authors = [];
+    let authors: string[] = [];
     for (let i = 0; i < books.length; i++) {
-        const author = books[i].author;
-            authors = authors.indexOf(author) > -1 ? authors : authors.concat(author);
+        const author: string = books[i].author;
+        authors = authors.indexOf(author) > -1 ? authors : authors.concat(author);
     };
 
-    const authorHandler = (event) => {
-        const author = event.target.value;
-        setValue(author)
-        let booksArr = []
+    const authorHandler = (event: IEvent): void => {
+        const author: string = event.target.value;
+        setValue(author);
+        let booksArr: IBooks[] = [];
         for (let k = 0; k < books.length; k++) {
-            const authorsArr = books[k].author;
-            authorsArr.indexOf(author) > -1 ? booksArr.push(books[k]) : booksArr;
+            const authors: string = books[k].author;
+            authors.indexOf(author) > -1 ? booksArr.push(books[k]) : booksArr;
         };
         setBookDetails(booksArr)
     };
@@ -29,7 +31,7 @@ const Author = ({ books }) => {
             <Search books={books} />
             <select value={value} onChange={authorHandler}>
                 <option value="select">SELECT AUTHOR</option>
-                {authors.sort().map((author, index) => (
+                {authors.sort().map((author: any, index: any) => (
                     <option value={author} key={index}>
                         {author}
                     </option>
@@ -37,7 +39,7 @@ const Author = ({ books }) => {
             </select>
             <div className={Style.booksContainer}>
                 {
-                    bookDetails === null ? '' : bookDetails.map(book => (
+                    bookDetails === null ? '' : bookDetails.map((book: any) => (
                         <Book key={book.id} 
                             src={`image/books/${book.name}.jpg`} 
                             name={book.name} 
@@ -52,7 +54,7 @@ const Author = ({ books }) => {
     );
 }
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async () => {
     const res = await fetch("http://localhost:3000/api/books")
     const books = await res.json()
     

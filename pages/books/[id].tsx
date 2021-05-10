@@ -1,6 +1,9 @@
 import Style from '../../styles/pages/details.module.scss';
+import { GetStaticProps, GetStaticPaths } from 'next';
+import { IProp } from "../../interfaces";
 
-const Details = ({ book }) => {
+const Details = ({ book }: IProp) => {
+
     return ( 
         <div className={Style.details}>
             <img src={`/image/books/${book.name}.jpg`} alt="book"/>
@@ -12,7 +15,7 @@ const Details = ({ book }) => {
             <p><span>Genres:</span></p>
             <ul>
                 {
-                    book.genres.map((genre, index) => (
+                    book.genres.map((genre: string, index: number) => (
                         <li key={index}>{genre}</li>
                     ))
                 }
@@ -22,11 +25,11 @@ const Details = ({ book }) => {
     );
 };
 
-export const getStaticPaths = async () => {
+export const getStaticPaths: GetStaticPaths = async () => {
     const res = await fetch("http://localhost:3000/api/books");
-    const data = await res.json();
+    const data= await res.json();
 
-    const paths = data.map(book => {
+    const paths = data.map((book) => {
         return {
             params: { id: book.id.toString() }
         };
@@ -38,7 +41,7 @@ export const getStaticPaths = async () => {
     }; 
 };
 
-export const getStaticProps = async (context) => {
+export const getStaticProps: GetStaticProps = async (context: any) => {
     const id = context.params.id;
     const res = await fetch("http://localhost:3000/api/books/" + id);
     const data = await res.json();

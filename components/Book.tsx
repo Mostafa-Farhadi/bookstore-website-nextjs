@@ -1,7 +1,8 @@
 import Link from "next/link";
 import Style from '../styles/components/book.module.scss';
+import { IBookComponent } from "../interfaces";
 
-const Book = (props) => {
+const Book = (props: IBookComponent) => {
     const { src, name, author, price, id } = props;
 
     return ( 
