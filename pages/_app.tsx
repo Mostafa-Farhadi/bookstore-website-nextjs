@@ -4,6 +4,7 @@ import { AppProps } from 'next/app';
 
 export default function App({ Component, pageProps }: AppProps) {
     return (
+        // Pass all pages as 'children' props to layout 
         <Layout>
             <Component {...pageProps} />
         </Layout>

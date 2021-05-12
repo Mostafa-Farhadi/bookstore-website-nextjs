@@ -1,6 +1,9 @@
 import Link from 'next/link';
 import Style from '../styles/components/header.module.scss';
 
+/*
+This is header for all page that consists of Four link to change pages.
+*/
 const Header = () => {
     return ( 
         <header className={Style.header}>

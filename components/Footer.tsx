@@ -1,6 +1,9 @@
 import Link from "next/link";
 import Style from '../styles/components/footer.module.scss';
 
+/*
+This is footer for all pages that shows an image.
+*/
 const Footer = () => {
     return ( 
         <footer className={Style.footer}>
