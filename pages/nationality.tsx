@@ -21,16 +21,8 @@ const Nationality = ({ books }: IProps) => {
 
     // An function to classify books according to their author nationality.
     const nation = (country: string): IBooks[] => {
-        // An array to hold books with same nationality
-        let booksArr: IBooks[] = [];
-        for (let k = 0; k < books.length; k++) {
-            // Build nationalities array variable of every book each time loop runs.
-            const nationalitiesArr: string = books[k].nationality;
-            // Push books that have same nationality 'booksArr'.
-            nationalitiesArr.indexOf(country) > -1 ? booksArr.push(books[k]) : '';
-        };
-        // return booksArr for each country argument
-        return booksArr;
+        // return an array of all books with same nationality.
+        return books.filter((book: any) => book.nationality === country);
     };
 
     return ( 
