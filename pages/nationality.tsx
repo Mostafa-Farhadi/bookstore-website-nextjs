@@ -22,7 +22,7 @@ const Nationality = ({ books }: IProps) => {
     // An function to classify books according to their author nationality.
     const nation = (country: string): IBooks[] => {
         // return an array of all books with same nationality.
-        return books.filter((book: any) => book.nationality === country);
+        return books.filter((book: IBooks) => book.nationality === country);
     };
 
     return ( 

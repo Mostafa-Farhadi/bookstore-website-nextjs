@@ -34,7 +34,7 @@ const Author = ({ books }: IProps) => {
         // Set selected author as value of select element.
         setSelectedAuthor(author);
         // Set an array of all books with same author as state to 'bookDetails'.
-        setBookDetails(books.filter((book: any) => book.author === author))
+        setBookDetails(books.filter((book: IBooks) => book.author === author))
     };
     
     return ( 
