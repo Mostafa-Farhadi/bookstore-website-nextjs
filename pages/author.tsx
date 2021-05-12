@@ -33,16 +33,8 @@ const Author = ({ books }: IProps) => {
         const author: string = event.target.value;
         // Set selected author as value of select element.
         setSelectedAuthor(author);
-        // Create an array to hold all books with same author.
-        let booksArr: IBooks[] = [];
-        for (let k = 0; k < books.length; k++) {
-        // Build authors variable of every book each time loop runs.
-            const authors: string = books[k].author;
-            // Push books that have same author as selected author to 'booksArr'.
-            authors.indexOf(author) > -1 ? booksArr.push(books[k]) : booksArr;
-        };
-        // Set 'booksArr' as state to 'bookDetails'
-        setBookDetails(booksArr)
+        // Set an array of all books with same author as state to 'bookDetails'.
+        setBookDetails(books.filter((book: any) => book.author === author))
     };
     
     return ( 
