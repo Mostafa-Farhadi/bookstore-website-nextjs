@@ -17,18 +17,18 @@ const Genre = ({ books }: IProps) => {
     // Hold each 'genre' which is selected from 'select element' to show as value of 'select element'.
     const [selectedGenre, setSelectedGenre] = useState<string>("select");
 
-    // An array to hold all genres to set as option in 'select-option' part
+    // An array to hold all genres to set as option in 'select-option' part.
     let totalGenres: string[] = [];
-    // Two nested loops used to add all available genres in a single array (totalGenres).
-    for (let i = 0; i < books.length; i++) {
-        // Array to hold genres of each book in every loop run.
-        const genresArr: string[] = books[i].genres;
-        // Add genres of each book in a 'totalGenres' array. Repetitive genres will be removed. 
-        for (let j = 0; j < genresArr.length; j++) {
+    // Add all available genres in a single array (totalGenres).
+    books.forEach(element => {
+        // Array to hold genres of each book for each element.
+        const genresArr: string[] = element.genres;
+        // Add genres of each book in a 'totalGenres' array. Repetitive genres are removed. 
+        genresArr.forEach(element => {
             // Check if there is a repetitive genre to only add once.
-            totalGenres = totalGenres.indexOf(genresArr[j]) > -1 ? totalGenres : totalGenres.concat(genresArr[j]);
-        };
-    };
+            totalGenres = totalGenres.indexOf(element) > -1 ? totalGenres : totalGenres.concat(element);
+        });
+    });
 
     // An handler to display all books with same genre and set selected genre as value of select element.
     const genreHandler = (event: IEvent): void => {
@@ -38,12 +38,13 @@ const Genre = ({ books }: IProps) => {
         setSelectedGenre(genre);
         // Create an array to hold all books with same genre.
         const booksArr: IBooks[] = [];
-        for (let k = 0; k < books.length; k++) {
-            // Build genres array of every book each time loop runs.
-            const genresArr: string[] = books[k].genres;
+        books.forEach(element => {
+            // Build genres array of every book for each element.
+            const genresArr: string[] = element.genres;
             // Push books that have same genre as selected genre to 'booksArr'.
-            genresArr.indexOf(genre) > -1 ? booksArr.push(books[k]) : booksArr;
-        };
+            genresArr.indexOf(genre) > -1 ? booksArr.push(element) : booksArr;
+            
+        });
         // Set 'booksArr' as state to 'bookDetails'
         setBookDetails(booksArr);
     };

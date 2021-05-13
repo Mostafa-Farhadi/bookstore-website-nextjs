@@ -19,13 +19,13 @@ const Author = ({ books }: IProps) => {
 
     // An array to hold all authors to set as option in 'select-option' part.
     let authors: string[] = [];
-    // A loops used to add all available authors in a single array (authors).
-    for (let i = 0; i < books.length; i++) {
-        // Array to hold authors of each book in every loop run.
-        const author: string = books[i].author;
+    // Add all available authors in a single array (authors).
+    books.forEach(element => {
+        // Array to hold authors of each book for each element.
+        const author: string = element.author;
         // Check if there is a repetitive author to only add once.
         authors = authors.indexOf(author) > -1 ? authors : authors.concat(author);
-    };
+    });
 
     // An handler to display all books with same author and set selected author as value of select element.
     const authorHandler = (event: IEvent): void => {

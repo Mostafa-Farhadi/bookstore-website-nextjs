@@ -9,15 +9,16 @@ This is nationality page. It classify books according to their author nationalit
 It is consists of Saerch input component to search books, and some section to group all books with same author nationality.
 */
 const Nationality = ({ books }: IProps) => {
+
     // An array to hold all possible nationality
     let nationalities: string[] = [];
-    // A loops used to add all nationality in a single array (nationalities).
-    for (let i = 0; i < books.length; i++) {
-        // Array to hold nationality of each book in every loop run.
-        const nationality: string = books[i].nationality;
+    // Add all nationality in a single array (nationalities).
+    books.forEach(element => {
+        // Array to hold nationality of each book for each element.
+        const nationality: string = element.nationality;
         // Check if there is a repetitive nationality to only add once.
         nationalities = nationalities.indexOf(nationality) > -1 ? nationalities : nationalities.concat(nationality);
-    };
+    });
 
     // An function to classify books according to their author nationality.
     const nation = (country: string): IBooks[] => {
