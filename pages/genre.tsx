@@ -20,11 +20,11 @@ const Genre = ({ books }: IProps) => {
     // An array to hold all genres to set as option in 'select-option' part.
     let totalGenres: string[] = [];
     // Add all available genres in a single array (totalGenres).
-    books.forEach(element => {
+    books.forEach((element: IBooks) => {
         // Array to hold genres of each book for each element.
         const genresArr: string[] = element.genres;
         // Add genres of each book in a 'totalGenres' array. Repetitive genres are removed. 
-        genresArr.forEach(element => {
+        genresArr.forEach((element: string) => {
             // Check if there is a repetitive genre to only add once.
             totalGenres = totalGenres.indexOf(element) > -1 ? totalGenres : totalGenres.concat(element);
         });

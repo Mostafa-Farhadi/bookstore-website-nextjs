@@ -13,7 +13,7 @@ const Nationality = ({ books }: IProps) => {
     // An array to hold all possible nationality
     let nationalities: string[] = [];
     // Add all nationality in a single array (nationalities).
-    books.forEach(element => {
+    books.forEach((element: IBooks) => {
         // Array to hold nationality of each book for each element.
         const nationality: string = element.nationality;
         // Check if there is a repetitive nationality to only add once.

@@ -20,7 +20,7 @@ const Author = ({ books }: IProps) => {
     // An array to hold all authors to set as option in 'select-option' part.
     let authors: string[] = [];
     // Add all available authors in a single array (authors).
-    books.forEach(element => {
+    books.forEach((element: IBooks) => {
         // Array to hold authors of each book for each element.
         const author: string = element.author;
         // Check if there is a repetitive author to only add once.
